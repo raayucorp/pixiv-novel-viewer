@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}「{{ query }}」の検索結果{% endblock %}
+{% block content %}
+    <h1>「{{ query }}」<br>検索結果 ({{ total }}件)</h1>
+    <a href="{{ url_for('index') }}">« 検索に戻る</a>
+    <hr>
+    {% if novels %}
+        <ul class="novel-list">
+        {% for novel in novels %}
+            <li>
+                <a href="{{ url_for('novel', novel_id=novel.id) }}">{{ novel.title }}</a>
+                <div class="novel-meta">
+                    作者: {{ novel.userName }} | {{ novel.wordCount }}字
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>作品が見つかりませんでした。</p>
+    {% endif %}
+
+    <div class="pagination">
+        {% if current_page > 1 %}
+            <a href="{{ url_for('search', q=query, p=current_page - 1) }}"><< 前のページ</a>
+        {% endif %}
+        
+        - {{ current_page }} -
+
+        {% if has_next %}
+             <a href="{{ url_for('search', q=query, p=current_page + 1) }}">次のページ >></a>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - 3DS Pixiv Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: sans-serif; background: #eee; margin: 0; padding: 5px; }
+        .container { background: #fff; padding: 10px; border: 1px solid #ccc; }
+        h1, h2 { font-size: 1.2em; margin-top: 0; }
+        a { color: #007bff; text-decoration: none; }
+        hr { border: 0; border-top: 1px solid #ccc; }
+        .novel-list { list-style: none; padding: 0; margin: 0; }
+        .novel-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .novel-meta { font-size: 0.8em; color: #666; }
+        .pagination { margin: 15px 0; text-align: center; }
+        .novel-content { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

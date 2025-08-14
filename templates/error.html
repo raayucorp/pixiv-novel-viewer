@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}エラー{% endblock %}
+{% block content %}
+    <h1>エラー発生</h1>
+    <p>処理中にエラーが発生しました。</p>
+    <p><strong>エラー内容:</strong></p>
+    <p>{{ message|safe }}</p>
+    <hr>
+    <a href="{{ url_for('index') }}">トップページに戻る</a>
+{% endblock %}
