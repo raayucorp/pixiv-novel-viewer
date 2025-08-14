@@ -1,0 +1,7 @@
+flask
+requests
+beautifulsoup4
+selenium
+webdriver-manager
+lxml
+python-dotenv
